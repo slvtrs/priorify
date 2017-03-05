@@ -1,0 +1,264 @@
+
+$font: 400 1em/1.2em 'Anonymous Pro', monospace;
+$black: #010101;
+$black_1: lighten($black, 15%);
+$black_2: lighten($black, 20%);
+$white: #eee;
+$medGray: #666;
+$red: #f55;
+$green: #5f5;
+$blue: #55f;
+
+* {
+  font-family: 'Anonymous Pro', monospace;
+  letter-spacing: .05em;
+  // transition: all 400ms ease;
+  transition: padding 400ms ease, background 0ms ease;
+}
+
+body {
+  background: $black;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 2s ease;
+  height: 80px;
+  display: none;
+}
+
+.App-Header {
+  background-color: lighten($black, 10%);
+  // height: 150px;
+  height: auto;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Todo-App {
+  padding: 1em;
+  margin: 1em;
+  // display: inline-block;
+  // text-align: left;
+  background: $black;
+  text-align: center;
+  border: solid 2px $white;
+  border-radius: 1em;
+
+  a {
+    // color: #55f;
+    // color: #f55;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.App-List {
+  // border: solid 1px red;
+  padding-left: 1.5em;
+}
+  .App-Item {
+    background: $black;
+    width: 20em;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    // min-height: 3em;
+    
+    .expand-button {
+      color: $medGray;
+      display: inline-block;
+      position: absolute;
+      transform: translate(-100%,25%);
+      &:hover {
+        color: $red;
+      }
+    }
+
+    .status-button {
+      width: 2em;
+      height: 2em;
+      border: solid .2em $white;
+      color: $medGray;
+      display: inline-block;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      border-radius: 15%;
+      transform: translate(-100%,25%);
+      box-sizing: border-box;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        width: 0; height: 0;
+        border-radius: 59%;
+        transition: all 200ms ease;
+        // background: $blue;
+        border: solid 0.25em $white;
+
+      }
+      // &:hover:after {
+      &:after {
+        width: 0.5em;
+        height: 0.5em;
+      }
+    }
+
+    .status-button.open {
+      // background: $medGray;
+      // border: none;
+      &:after {
+        // display: none;
+        border-color: $blue;
+      }
+      &:before {
+        // content: '';
+        position: absolute;
+        width: 25%;
+        height: 3em;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%) rotate(45deg);
+        background: $black;
+      }
+    }
+
+    // .status-button.disabled {
+    //   background: $medGray;
+    //   border: none;
+    //   &:after {
+    //     display: none;
+    //   }
+    //   &:before {
+    //     content: '';
+    //     position: absolute;
+    //     width: 25%;
+    //     height: 3em;
+    //     top: 50%; left: 50%;
+    //     transform: translate(-50%,-50%) rotate(45deg);
+    //     background: $black;
+    //   }
+    // }
+    .status-button.disabled {
+      border-color: $medGray;
+      cursor: default;
+      &:after {
+        display: none;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: .225em;
+        border-radius: 20px;
+        height: 100%;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%) rotate(45deg);
+        background: $medGray;
+      }
+    }
+
+    .status-button.complete {
+      &:after {
+        border-color: $green;
+      }
+    }
+
+    .status-button.complete {
+      &:after {
+        border-color: $green;
+      }
+    }
+
+    .status-button.closed {
+      &:after {
+        border-color: $red;
+      }
+    }
+    
+    .App-Input {
+      color: $white;
+      font: $font;
+      min-height: 1.2em;
+      outline: none;
+      padding: 0.25em 0.5em;
+      text-align: left;
+      display: block;
+      // display: inline-block;
+      &:focus {
+        background: $black_1;
+      }
+    }
+  }
+// }
+
+.App-Button {
+  display: inline-block;
+  padding: 0.5em;
+  margin: 0 0.5em;
+  border: solid 2px $white;
+  border-radius: 1em;
+  width: 10em;
+  overflow: hidden;
+  &:hover {
+    background: $black_2;
+    // padding: .75em;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.error {
+  color: red;
+  position: absolute;
+}
+
+.success {
+  color: $blue;
+  position: absolute;
+}
+
+li span.delete-item {
+  visibility: hidden;
+}
+
+span.delete-item a {
+  text-decoration: none;
+  color: red;
+}
+
+li:hover span.delete-item {
+  visibility: visible;
+}
+
+.Footer {
+  // text-align: center;
+}
+
+.Footer a {
+  padding: 0 2px;
+}
+
+.Footer a.active {
+  font-weight: bold;
+}
