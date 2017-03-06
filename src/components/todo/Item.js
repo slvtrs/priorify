@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
 import {ItemList} from './ItemList'
-// import {addTodo, generateId, findById, toggleTodo, updateTodo, removeTodo, filterTodos} from '../../lib/todoHelpers'
-// import {pipe, partial} from '../../lib/utils'
-// import {loadChildren, saveTodo, destroyTodo} from '../../lib/todoService'
 import {saveTodo} from '../../lib/todoService'
 
 export class Item extends Component {
@@ -47,23 +44,14 @@ export class Item extends Component {
 	}
 
   	handleInput = (evt, id) => {
-  		  var currentItem = {
-  		    id: this.props.id,
-  		    parent: this.props.parent,
-  		    name: this.refs.input.innerHTML
-  		  };
-  		  // this.setState({currentItem});
-  		  this.setState({name: currentItem.name});
-
-  		    // const getToggledTodo = pipe(findById, toggleTodo)
-  		    // const updated = getToggledTodo(id, this.state.todos)
-  		    // const getUpdatedTodos = partial(updateTodo, this.state.todos)
-  		    // const updatedTodos = getUpdatedTodos(updated)
-  		    // this.setState({children: updatedTodos})
-  		    // saveTodo(updated);
-
-  		    saveTodo( currentItem );
-  		      // .then(() => this.showTempMessage('Todo Updated'))
+		var currentItem = {
+			id: this.props.id,
+			parent: this.props.parent,
+			name: this.refs.input.innerHTML
+		};
+		this.setState({currentItem});
+		this.setState({name: currentItem.name});
+		saveTodo( currentItem );
   	}
 
   	toggleExpand = (evt) => {
@@ -73,15 +61,17 @@ export class Item extends Component {
   		})
   	}
 
+  	handleFocusParent = (evt) => {
+  		this.props.handleNavigation(evt, this.props.parent, this.props.parentPos);
+  	}
+
 	render(){
 		var childList = this.state.expanded ?
 			<ItemList className='App-List'
 				id={this.props.id}
+				position={this.props.position}
 				mods={this.props.mods}
-				// handleKeyDown={this.handleKeyDown}
-				// handleInput={this.handleInput}
-				// handleRemove={this.handleRemove}
-				handleFocusPrevious={this.handleFocusPrevious}
+				handleFocusParent={this.handleFocusParent}
 				currentItem={this.state.currentItem}/> 
 			: '';
 		var expandButton = 
@@ -100,12 +90,11 @@ export class Item extends Component {
 					suppressContentEditableWarning='true'
 					ref='input'
 					onKeyDown={(e) => {this.handleKeyDown(e)}} 
-					// onInput={(e) => {this.props.handleInput(e)}}
 					onInput={this.handleInput} 
 					value={this.props.currentItem}>
 						{this.props.name} 
 				</div>
-				{/*statusButton*/}
+				{statusButton}
 				{childList}
 			</div>
 		)
@@ -113,8 +102,8 @@ export class Item extends Component {
 }
 
 Item.propTypes = {
-	id: React.PropTypes.number,
+	id: React.PropTypes.number.isRequired,
 	name: React.PropTypes.string,
 	currentItem: React.PropTypes.object,
-	// handleInput: React.PropTypes.func.isRequired
+	mods: React.PropTypes.array.isRequired,
 }

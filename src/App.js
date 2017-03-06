@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import {ItemList, Footer} from './components/todo'
-// import {pipe, partial} from './lib/utils'
 import {loadChildren} from './lib/todoService'
 
 class App extends Component {
@@ -72,6 +71,10 @@ class App extends Component {
     }
   }
 
+  test = (evt) =>{
+    console.log('top');
+  }
+
   render() {
     return (
       <div className="App"
@@ -86,10 +89,9 @@ class App extends Component {
           {this.state.message && <span className='success'>{this.state.message}</span>}
           <ItemList 
             id={0}
+            position={0}
             mods={this.state.mods}
-            // handleInput={this.handleInput}
-            // handleRemove={this.handleRemove}
-            // handleFocusPrevious={this.handleFocusPrevious}
+            handleFocusParent={this.test}
             currentItem={this.state.currentItem}/>
           <Footer/>
         </div>
