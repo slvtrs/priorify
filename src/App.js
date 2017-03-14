@@ -71,10 +71,6 @@ class App extends Component {
     }
   }
 
-  test = (evt) =>{
-    console.log('top');
-  }
-
   render() {
     return (
       <div className="App"
@@ -92,6 +88,7 @@ class App extends Component {
             position={0}
             mods={this.state.mods}
             handleFocusParent={this.test}
+            handleFocusOverflow={this.test}
             currentItem={this.state.currentItem}/>
           <Footer/>
         </div>

@@ -4,13 +4,12 @@ import {saveTodo} from '../../lib/todoService'
 
 export class Item extends Component {
 	state = {
-    	name: this.props.name || this.props.content,
-    	expanded: false,
-    	currentItem: {...this.props}
-  	}
+  		name: this.props.name || this.props.content,
+  		expanded: false,
+	}
 
 	componentDidMount() {
-  		this.refs.input.focus();
+		this.refs.input.focus();
 	}
 
 	componentWillUnmount() {
@@ -18,11 +17,18 @@ export class Item extends Component {
 	}
 
 	componentWillUpdate() {
-		// console.log(this.props.id, 'will update')
+		console.log(this.props.id, 'will update')
 	}
 
 	componentDidUpdate() {
-		// console.log(this.props.name, 'did updte!')
+		console.log(this.props.name, 'did updte!')
+	}
+
+	getDefaultProps() {
+		return {
+			text: 'yo',
+			id: Math.random()*1000;
+		};
 	}
 
 	handleKeyDown (evt) {
@@ -46,74 +52,46 @@ export class Item extends Component {
 			}
 	}
 
-  	handleArrowDown = () => {
+	handleArrowDown = () => {
 	    var item = this.refs['item-1'];
 	    if (!item) return;
 	    item.refs.input.focus();
 	    alert('why')
 	}
 
-  	handleInput = (evt, id) => {
-  		if(this.refs.input.innerHTML === this.state.name)
-  			return;
+	handleInput = (evt, id) => {
+		if(this.refs.input.innerHTML === this.state.name)
+			return;
 		var currentItem = {
 			id: this.props.id,
 			parent: this.props.parent,
-			name: this.refs.input.innerHTML,
-			updated: Date.now(),
-			created: this.state.currentItem.created
-			// ...this.state.currentItem
+			name: this.refs.input.innerHTML
 		};
 		this.setState({currentItem});
 		this.setState({name: currentItem.name});
 		saveTodo( currentItem );
-  	}
+	}
 
-  	toggleExpand = (evt) => {
-  		evt.preventDefault()
-  		// this.props.expanded = !this.state.expanded;
-  		this.setState({
-  			expanded: !this.state.expanded
-  		})
-  	}
+	toggleExpand = (evt) => {
+		evt.preventDefault()
+		this.setState({
+			expanded: !this.state.expanded
+		})
+	}
 
-  	handleFocus = (evt) => {
-  		console.log('focus me', this.state.name);
-  		// this.props.handleNavigation(evt, this.props.parent, this.props.parentPos);
-  		// if(evt.key == 'ArrowUp')
-  			this.refs.input.focus();
-  		// else if(evt.key== 'ArrowDown')
-  			// this.refs.
-  	}
-
-  	handleFocusOverflow = (evt) => {
-  		this.props.handleFocusNextUncle(evt, this.props.position);
-  	}
-
-  	handleEnterFromBottom = (evt) => {
-		// var node = this.refs['item-'+index];
-		// if(node.state.expanded){
-		// 	node.refs.list.refs['item-0'].refs.input.focus();
-		// }
-		// else {
-	 //    	var item = this.refs['item-'+ (index+1) ];
-	 //    	if (item)
-	 //    		item.refs.input.focus();
-	 //    	else {
-	 //    		this.props.handleFocusOverflow(evt);
-	 //    	}
-	 //    }
-  	}
+	handleFocus = (evt) => {
+		console.log('focus me', this.state.name);
+		// this.props.handleNavigation(evt, this.props.parent, this.props.parentPos);
+		this.refs.input.focus();
+	}
 
 	render(){
 		var childList = this.state.expanded ?
 			<ItemList className='App-List'
 				id={this.props.id}
-				ref='list'
 				position={this.props.position}
 				mods={this.props.mods}
 				handleFocusParent={this.handleFocus}
-				handleFocusOverflow={this.handleFocusOverflow}
 				currentItem={this.state.currentItem}/> 
 			: '';
 		var expandButton = 

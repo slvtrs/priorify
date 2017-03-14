@@ -1,17 +1,17 @@
 import React, {Component} from 'react'
 import {Item} from './Item'
-import {addTodo, generateId, removeTodo} from '../../lib/todoHelpers'
-import {loadChildren, createTodo, destroyTodo} from '../../lib/todoService'
+import {addTodo, generateId, removeTodo, findById} from '../../lib/todoHelpers'
+import {loadChildren, createTodo, saveTodo, destroyTodo} from '../../lib/todoService'
 
 export class ItemList extends Component {
 	state = {
-	  children: [],
+	  items: [],
 	  currentItem: {}
 	}
 
 	componentDidMount() {
 		loadChildren(this.props.id)
-			.then(children => this.setState({children}))
+			.then(items => this.setState({items}));
   	}
 
 	handleFocus = (index) => {
@@ -29,20 +29,40 @@ export class ItemList extends Component {
 	}
 
 	handleDownArrow = (evt, index) => {
-	    var item = this.refs['item-'+ (index+1) ];
-	    if (!item)
-	    	this.props.handleFocusParent(evt);
-	    else
-	    	item.refs.input.focus();
+		// I'm navigating the DOM as if this were jquery, and that feels dirty
+		// gotta be bad for performance...
+		// instead, I should be manipulating the data
+		// and letting each component reredner itself with lifecycle funcs
+
+		var node = this.refs['item-'+index];
+		if(node.state.expanded){
+			node.refs.list.refs['item-0'].refs.input.focus();
+		}
+		else {
+	    	var item = this.refs['item-'+ (index+1) ];
+	    	if (item)
+	    		item.refs.input.focus();
+	    	else {
+	    		this.props.handleFocusOverflow(evt);
+	    	}
+	    }
+	}
+
+	focusNextSibling = (evt, index) => {
+		console.log(index);
+		var item = this.refs['item-'+ (index+1) ];
+		console.log(item);
+		if (item)
+			item.refs.input.focus();
 	}
 
 	handleEnter = (evt, id) => {
 	  evt.preventDefault();
 	  const newId = generateId();
-	  const newItem = {name:'', isCompleted:false, id: newId, parent: this.props.id};
-	  const updatedTodos = addTodo(this.state.children, newItem, id);
+	  const newItem = {name:'', id: newId, parent: this.props.id, created: Date.now(), updated_at: Date.now()};
+	  const updatedTodos = addTodo(this.state.items, newItem, id);
 	  this.setState({
-	    children: updatedTodos,
+	    items: updatedTodos,
 	    currentItem: {},
 	    errorMessage: ''
 	  });
@@ -51,17 +71,21 @@ export class ItemList extends Component {
 
 	handleRemove = (evt, id) => {
 	  evt.preventDefault()
-	  const updatedTodos = removeTodo(this.state.children, id)
-	  this.setState({children: updatedTodos})
+	  const updatedTodos = removeTodo(this.state.items, id)
+	  this.setState({items: updatedTodos})
 	  destroyTodo(id);
 	}
 
-	handleIndent = (evt) => {
-	  evt.preventDefault()
-	  alert('indent')
+	handleIndent = (evt, id, index) => {
+		evt.preventDefault();
+		const item = findById(id, this.state.items);
+		item.parent = this.state.items[index-1].id;
+		saveTodo(item);
+		if(!this.refs['item-'+(index-1)].state.expanded)
+			this.refs['item-'+(index-1)].toggleExpand(evt);
 	}
 
-	handleUnindent = (evt) => {
+	handleUnindent = (evt, id, index) => {
 	  evt.preventDefault()
 	  alert('unindent')
 	}
@@ -87,6 +111,12 @@ export class ItemList extends Component {
 					this.handleFocus(index-1);
 				}
 			break;
+			case 'Tab':
+				if(this.props.mods.length)
+					this.handleUnindent(evt, id, index);
+				else
+					this.handleIndent(evt, id, index);
+			break;
 			default:
 				// update this name
 					// actually, items handle this themselves
@@ -98,8 +128,8 @@ export class ItemList extends Component {
 	render() {
 		return (
 			<div className='App-List' onKeyDown={this.handleKeyDown}>
-			  <ul>
-			    {this.state.children.map((item, i) => 
+			  {/*<ul>*/}
+			    {this.state.items.map((item, i) => 
 			    	<Item key={item.id} 
 				    	name={this.props.name}
 				    	parent={this.props.id}
@@ -107,15 +137,17 @@ export class ItemList extends Component {
 				    	position={i}
 				    	ref={'item-' + i}
 				    	mods={this.props.mods}
+				    	expanded={false}
 				    	handleNavigation={(e,id,i) => this.handleNavigation(e,id,i)}
 				    	handleInput={this.handleInput}
 				    	handleFocus={this.handleFocus}
 				    	handleFocusParent={this.props.handleFocusParent}
+				    	handleFocusNextUncle={this.focusNextSibling}
 				    	// currentItem={this.props.currentItem}
 				    	caretPos={0}
 			    	{...item}/>
 			    )}
-			  </ul>
+			  {/*</ul>*/}
 			</div>
 		)
 	}

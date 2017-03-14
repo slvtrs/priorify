@@ -23,7 +23,6 @@ export const createTodo = (todo) => {
 }
 
 export const saveTodo = (todo) => {
-	console.log(JSON.stringify(todo))
 	return fetch(`${baseUrl}/${todo.id}`, {
 		method: 'PUT',
 		headers: {

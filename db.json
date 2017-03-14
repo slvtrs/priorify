@@ -15,128 +15,256 @@
     {
       "id": 3,
       "parent": 0,
-      "name": "third"
-    },
-    {
-      "id": 4,
-      "name": "fourth",
-      "isCompleted": true,
-      "parent": 0
-    },
-    {
-      "id": 5,
-      "name": "child",
-      "isCompleted": false,
-      "parent": 3
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 8236
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 7908
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 6732
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 5842
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 4823
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 1966
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 5850
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 4455
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 7166
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 6713
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 3344
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 6468
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 8000
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 5017
-    },
-    {
-      "id": 2072,
-      "name": "f"
-    },
-    {
-      "id": 9414,
-      "name": "k"
-    },
-    {
-      "id": 5758,
-      "name": "okk!"
-    },
-    {
-      "id": 6491,
-      "name": "j"
-    },
-    {
-      "id": 4272,
-      "name": "j"
+      "name": "Reading List"
     },
     {
       "id": 5227,
       "parent": 0,
-      "name": "fifth"
+      "name": "Character Tasks"
     },
     {
-      "id": 56,
-      "name": "&nbsp;well now"
-    },
-    {
-      "id": 7794,
+      "id": 4696,
       "parent": 3,
-      "name": "nice"
+      "name": "Philosophy of Aesthetics (Silverman)"
     },
     {
-      "id": 7070,
+      "id": 4417,
+      "parent": 0,
+      "name": "Entry points"
+    },
+    {
+      "id": 9391,
+      "parent": 4417,
+      "name": "wanting nice things"
+    },
+    {
+      "id": 865,
+      "parent": 4417,
+      "name": "wanting attention"
+    },
+    {
+      "id": 9530,
+      "parent": 9391,
+      "name": "refine my character"
+    },
+    {
+      "id": 2424,
+      "parent": 865,
+      "name": "middle child stuff?"
+    },
+    {
+      "id": 5840,
+      "parent": 865,
+      "name": "want it, but fear it"
+    },
+    {
+      "id": 533,
+      "parent": 865,
+      "name": "how to wield this compulsion strategically"
+    },
+    {
+      "id": 1387,
+      "parent": 865,
+      "name": "what is the metaphorical \"stone tumbler\" of character?"
+    },
+    {
+      "id": 4431,
+      "parent": 1387,
+      "name": "travel?"
+    },
+    {
+      "id": 1251,
+      "parent": 1387,
+      "name": "interacting with many others?"
+    },
+    {
+      "id": 6640,
+      "parent": 1387,
+      "name": "much interaction with any others?"
+    },
+    {
+      "id": 8734,
+      "parent": 4417,
+      "name": "why create?"
+    },
+    {
+      "id": 7760,
+      "parent": 9391,
+      "name": "phone"
+    },
+    {
+      "id": 5442,
+      "parent": 7760,
+      "name": "restore LG"
+    },
+    {
+      "name": "",
+      "isCompleted": false,
+      "id": 7475,
+      "parent": 9391
+    },
+    {
+      "id": 2585,
+      "parent": 7760,
+      "name": "pay Greg"
+    },
+    {
+      "id": 1148,
+      "parent": 5227,
+      "name": "clothes shopping"
+    },
+    {
+      "name": "",
+      "isCompleted": false,
+      "id": 7514,
+      "parent": 1148
+    },
+    {
+      "id": 3514,
+      "parent": 7514,
+      "name": "Branding/themes/styles"
+    },
+    {
+      "id": 2339,
+      "parent": 3514,
+      "name": "Occult"
+    },
+    {
+      "id": 6183,
+      "parent": 3514,
+      "name": "Programmer (control)"
+    },
+    {
+      "id": 8295,
+      "parent": 3514,
+      "name": "Coder (artist)"
+    },
+    {
+      "id": 9189,
+      "parent": 3514,
+      "name": "Innovator (innovative problem solver)"
+    },
+    {
+      "id": 525,
+      "parent": 3514,
+      "name": "Self improver (tools for enhancement)"
+    },
+    {
+      "id": 3777,
+      "parent": 2339,
+      "name": "this is probably the only one that really lends itself to an aesthetic"
+    },
+    {
+      "id": 6329,
       "parent": 3,
-      "name": "ok"
+      "name": "Sapiens"
+    },
+    {
+      "id": 7230,
+      "parent": 3,
+      "name": "Book from Rachel"
+    },
+    {
+      "id": 8312,
+      "parent": 865,
+      "name": "What's really the root/destination of the desire?"
+    },
+    {
+      "id": 8473,
+      "parent": 8312,
+      "name": "Girlfriend?"
+    },
+    {
+      "id": 8214,
+      "parent": 8312,
+      "name": "Respect from peers?"
+    },
+    {
+      "id": 5127,
+      "parent": 8312,
+      "name": "Pride from parents?"
+    },
+    {
+      "id": 6153,
+      "parent": 8734,
+      "name": "tools for my friends?"
+    },
+    {
+      "id": 3043,
+      "parent": 6153,
+      "name": "I make them toys, but tools tailored to them...?"
+    },
+    {
+      "id": 1989,
+      "parent": 8734,
+      "name": "tools for myself?"
+    },
+    {
+      "id": 7939,
+      "parent": 4417,
+      "name": "what am I working towards?"
+    },
+    {
+      "id": 2157,
+      "parent": 7939,
+      "name": "career"
+    },
+    {
+      "id": 8758,
+      "parent": 7939,
+      "name": "passion projects"
+    },
+    {
+      "id": 7173,
+      "parent": 7939,
+      "name": "relationships"
+    },
+    {
+      "id": 1099,
+      "parent": 7939,
+      "name": "family"
+    },
+    {
+      "id": 1377,
+      "parent": 7939,
+      "name": "living situation"
+    },
+    {
+      "id": 713,
+      "parent": 5227,
+      "name": "developer"
+    },
+    {
+      "id": 1326,
+      "parent": 713,
+      "name": "move to the cloud"
+    },
+    {
+      "id": 5866,
+      "parent": 1326,
+      "name": "phone number"
+    },
+    {
+      "id": 3689,
+      "parent": 1326,
+      "name": "hard drive"
+    },
+    {
+      "id": 1476,
+      "parent": 1,
+      "name": "fix indent focus"
+    },
+    {
+      "name": "",
+      "isCompleted": false,
+      "id": 7080,
+      "parent": 1476
+    },
+    {
+      "name": "",
+      "isCompleted": false,
+      "id": 443,
+      "parent": 1476
     }
   ]
 }
