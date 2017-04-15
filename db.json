@@ -2,269 +2,552 @@
   "todos": [
     {
       "id": 1,
-      "name": "now that",
-      "isCompleted": true,
-      "parent": 0
+      "name": "Priorify #todo",
+      "status": "open",
+      "expanded": true,
+      "parent": 0,
+      "position": 1
     },
     {
       "id": 2,
       "name": "then this",
-      "isCompleted": true,
-      "parent": 0
+      "status": "disabled",
+      "expanded": true,
+      "parent": 1,
+      "position": 2
     },
     {
       "id": 3,
-      "parent": 0,
-      "name": "Reading List"
+      "name": "Reading List",
+      "status": "default",
+      "expanded": false,
+      "parent": 9085,
+      "position": 5
     },
     {
       "id": 5227,
+      "name": "Character Tasks",
+      "status": "complete",
+      "expanded": false,
       "parent": 0,
-      "name": "Character Tasks"
+      "position": 2
     },
     {
       "id": 4696,
+      "name": "Philosophy of Aesthetics (Silverman)",
+      "status": "default",
+      "expanded": false,
       "parent": 3,
-      "name": "Philosophy of Aesthetics (Silverman)"
+      "updated": 1489632160332
     },
     {
       "id": 4417,
+      "name": "Entry points",
+      "status": "default",
+      "expanded": true,
       "parent": 0,
-      "name": "Entry points"
+      "position": 3
     },
     {
       "id": 9391,
-      "parent": 4417,
-      "name": "wanting nice things"
+      "name": "wanting nice things",
+      "status": "open",
+      "expanded": false,
+      "parent": 4417
     },
     {
       "id": 865,
-      "parent": 4417,
-      "name": "wanting attention"
+      "name": "wanting attention",
+      "status": "open",
+      "expanded": false,
+      "parent": 4417
     },
     {
       "id": 9530,
-      "parent": 9391,
-      "name": "refine my character"
-    },
-    {
-      "id": 2424,
-      "parent": 865,
-      "name": "middle child stuff?"
-    },
-    {
-      "id": 5840,
-      "parent": 865,
-      "name": "want it, but fear it"
-    },
-    {
-      "id": 533,
-      "parent": 865,
-      "name": "how to wield this compulsion strategically"
-    },
-    {
-      "id": 1387,
-      "parent": 865,
-      "name": "what is the metaphorical \"stone tumbler\" of character?"
-    },
-    {
-      "id": 4431,
-      "parent": 1387,
-      "name": "travel?"
-    },
-    {
-      "id": 1251,
-      "parent": 1387,
-      "name": "interacting with many others?"
-    },
-    {
-      "id": 6640,
-      "parent": 1387,
-      "name": "much interaction with any others?"
-    },
-    {
-      "id": 8734,
-      "parent": 4417,
-      "name": "why create?"
-    },
-    {
-      "id": 7760,
-      "parent": 9391,
-      "name": "phone"
-    },
-    {
-      "id": 5442,
-      "parent": 7760,
-      "name": "restore LG"
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 7475,
+      "name": "refine my character",
+      "status": "open",
+      "expanded": false,
       "parent": 9391
     },
     {
-      "id": 2585,
+      "id": 2424,
+      "name": "middle child stuff?",
+      "status": "open",
+      "expanded": false,
+      "parent": 865
+    },
+    {
+      "id": 5840,
+      "name": "want it, but fear it",
+      "status": "open",
+      "expanded": false,
+      "parent": 865
+    },
+    {
+      "id": 533,
+      "name": "how to wield this compulsion strategically",
+      "status": "open",
+      "expanded": false,
+      "parent": 865
+    },
+    {
+      "id": 1387,
+      "name": "what is the metaphorical \"stone tumbler\" of character?",
+      "status": "complete",
+      "expanded": false,
+      "parent": 865,
+      "updated": 1489618357673
+    },
+    {
+      "id": 4431,
+      "name": "travel?",
+      "status": "open",
+      "expanded": false,
+      "parent": 1387,
+      "updated": 1489618350797
+    },
+    {
+      "id": 1251,
+      "name": "interacting with many others?",
+      "status": "open",
+      "expanded": false,
+      "parent": 1387,
+      "updated": 1489618351754
+    },
+    {
+      "id": 6640,
+      "name": "much interaction with any others?",
+      "status": "open",
+      "expanded": false,
+      "parent": 1387,
+      "updated": 1489618352889
+    },
+    {
+      "id": 8734,
+      "name": "why create?",
+      "status": "open",
+      "expanded": false,
+      "parent": 4417,
+      "position": 2
+    },
+    {
+      "id": 7760,
+      "name": "phone",
+      "status": "open",
+      "expanded": false,
+      "parent": 9391
+    },
+    {
+      "id": 5442,
+      "name": "restore LG",
+      "status": "closed",
+      "expanded": false,
       "parent": 7760,
-      "name": "pay Greg"
+      "updated": 1489618272149
+    },
+    {
+      "id": 2585,
+      "name": "pay Greg",
+      "status": "complete",
+      "expanded": false,
+      "parent": 7760,
+      "updated": 1489618290047
     },
     {
       "id": 1148,
-      "parent": 5227,
-      "name": "clothes shopping"
-    },
-    {
-      "name": "",
-      "isCompleted": false,
-      "id": 7514,
-      "parent": 1148
+      "name": "clothes shopping",
+      "status": "default",
+      "expanded": false,
+      "parent": 5227
     },
     {
       "id": 3514,
-      "parent": 7514,
-      "name": "Branding/themes/styles"
+      "name": "Branding/themes/styles",
+      "status": "open",
+      "expanded": false,
+      "parent": 5227,
+      "position": 1
     },
     {
       "id": 2339,
+      "name": "Occult",
+      "status": "open",
+      "expanded": false,
       "parent": 3514,
-      "name": "Occult"
+      "position": 0
     },
     {
       "id": 6183,
+      "name": "Programmer (control)",
+      "status": "open",
+      "expanded": false,
       "parent": 3514,
-      "name": "Programmer (control)"
+      "updated": 1489623291903
     },
     {
       "id": 8295,
+      "name": "Coder (artist)",
+      "status": "open",
+      "expanded": false,
       "parent": 3514,
-      "name": "Coder (artist)"
+      "updated": 1489623292718
     },
     {
       "id": 9189,
+      "name": "Innovator (innovative problem solver)",
+      "status": "open",
+      "expanded": false,
       "parent": 3514,
-      "name": "Innovator (innovative problem solver)"
+      "updated": 1489623293921
     },
     {
       "id": 525,
+      "name": "Self improver (tools for enhancement)",
+      "status": "open",
+      "expanded": false,
       "parent": 3514,
-      "name": "Self improver (tools for enhancement)"
+      "updated": 1489623294846
     },
     {
       "id": 3777,
-      "parent": 2339,
-      "name": "this is probably the only one that really lends itself to an aesthetic"
+      "name": "this is probably the only one that really lends itself to an aesthetic",
+      "status": "open",
+      "expanded": false,
+      "parent": 2339
     },
     {
       "id": 6329,
+      "name": "Sapiens",
+      "status": "default",
+      "expanded": false,
       "parent": 3,
-      "name": "Sapiens"
+      "updated": 1489632158727
     },
     {
       "id": 7230,
+      "name": "Building Online Communities",
+      "status": "default",
+      "expanded": false,
       "parent": 3,
-      "name": "Book from Rachel"
+      "updated": 1489632153973
     },
     {
       "id": 8312,
+      "name": "What's really the root/destination of the desire?",
+      "status": "complete",
+      "expanded": true,
       "parent": 865,
-      "name": "What's really the root/destination of the desire?"
+      "updated": 1489618346485
     },
     {
       "id": 8473,
-      "parent": 8312,
-      "name": "Girlfriend?"
+      "name": "Girlfriend?",
+      "status": "open",
+      "expanded": false,
+      "parent": 8312
     },
     {
       "id": 8214,
-      "parent": 8312,
-      "name": "Respect from peers?"
+      "name": "Respect from peers?",
+      "status": "open",
+      "expanded": false,
+      "parent": 8312
     },
     {
       "id": 5127,
-      "parent": 8312,
-      "name": "Pride from parents?"
+      "name": "Pride from parents?",
+      "status": "open",
+      "expanded": false,
+      "parent": 8312
     },
     {
       "id": 6153,
-      "parent": 8734,
-      "name": "tools for my friends?"
+      "name": "tools for my friends?",
+      "status": "open",
+      "expanded": false,
+      "parent": 8734
     },
     {
       "id": 3043,
+      "name": "I make them toys, but tools tailored to them...?",
+      "status": "open",
+      "expanded": false,
       "parent": 6153,
-      "name": "I make them toys, but tools tailored to them...?"
+      "updated": 1489618408396
     },
     {
       "id": 1989,
+      "name": "tools for myself?",
+      "status": "open",
+      "expanded": true,
       "parent": 8734,
-      "name": "tools for myself?"
+      "updated": 1489618413349
     },
     {
       "id": 7939,
-      "parent": 4417,
-      "name": "what am I working towards?"
+      "name": "what am I working towards?",
+      "status": "open",
+      "expanded": false,
+      "parent": 4417
     },
     {
       "id": 2157,
+      "name": "career",
+      "status": "open",
+      "expanded": false,
       "parent": 7939,
-      "name": "career"
+      "updated": 1489618430031
     },
     {
       "id": 8758,
+      "name": "passion projects",
+      "status": "open",
+      "expanded": false,
       "parent": 7939,
-      "name": "passion projects"
+      "updated": 1489618429068
     },
     {
       "id": 7173,
+      "name": "relationships",
+      "status": "open",
+      "expanded": false,
       "parent": 7939,
-      "name": "relationships"
+      "updated": 1489618427855
     },
     {
       "id": 1099,
+      "name": "family",
+      "status": "open",
+      "expanded": false,
       "parent": 7939,
-      "name": "family"
+      "updated": 1489618426810
     },
     {
       "id": 1377,
+      "name": "living situation",
+      "status": "open",
+      "expanded": false,
       "parent": 7939,
-      "name": "living situation"
+      "updated": 1489618425828
     },
     {
       "id": 713,
+      "name": "developer",
+      "status": "open",
+      "expanded": true,
       "parent": 5227,
-      "name": "developer"
+      "position": 2
     },
     {
       "id": 1326,
+      "name": "move to the cloud",
+      "status": "open",
+      "expanded": true,
       "parent": 713,
-      "name": "move to the cloud"
+      "position": 0
     },
     {
       "id": 5866,
+      "name": "phone number",
+      "status": "disabled",
+      "expanded": false,
       "parent": 1326,
-      "name": "phone number"
+      "position": 0,
+      "updated": 1491829517097
     },
     {
       "id": 3689,
+      "name": "hard drive",
+      "status": "complete",
+      "expanded": false,
       "parent": 1326,
-      "name": "hard drive"
+      "position": 1,
+      "updated": 1491829520496
     },
     {
       "id": 1476,
+      "name": "fix indent focus",
+      "status": "closed",
+      "expanded": true,
       "parent": 1,
-      "name": "fix indent focus"
+      "position": 0
+    },
+    {
+      "id": 8784,
+      "name": "Hierarchy",
+      "status": "complete",
+      "expanded": false,
+      "parent": 0,
+      "position": 8,
+      "created": 1489630486688
+    },
+    {
+      "id": 5439,
+      "name": "node",
+      "status": "open",
+      "expanded": true,
+      "parent": 3240,
+      "created": 1489631746360
     },
     {
       "name": "",
-      "isCompleted": false,
-      "id": 7080,
-      "parent": 1476
+      "id": 8137,
+      "parent": 5439,
+      "created": 1489631750617,
+      "updated": 1489631750617
     },
     {
-      "name": "",
-      "isCompleted": false,
-      "id": 443,
-      "parent": 1476
+      "id": 175,
+      "name": "root_list",
+      "status": "default",
+      "expanded": true,
+      "parent": 8784,
+      "created": 1489631762512
+    },
+    {
+      "id": 2254,
+      "name": "node",
+      "status": "open",
+      "expanded": true,
+      "parent": 175,
+      "created": 1489631774644
+    },
+    {
+      "id": 7560,
+      "name": "expandButton",
+      "status": "default",
+      "expanded": false,
+      "parent": 2254,
+      "updated": 1489631954657,
+      "created": 1489631784000
+    },
+    {
+      "id": 9741,
+      "name": "statusButton",
+      "status": "default",
+      "expanded": false,
+      "parent": 2254,
+      "updated": 1489631956552,
+      "created": 1489631795910
+    },
+    {
+      "id": 1271,
+      "name": "input",
+      "status": "default",
+      "expanded": false,
+      "parent": 2254,
+      "updated": 1489631942283,
+      "created": 1489631800621
+    },
+    {
+      "id": 6962,
+      "name": "list",
+      "status": "default",
+      "expanded": true,
+      "parent": 2254,
+      "created": 1489631810198
+    },
+    {
+      "id": 9453,
+      "name": "node",
+      "status": "open",
+      "expanded": false,
+      "parent": 6962,
+      "updated": 1489631922973,
+      "created": 1489631916417
+    },
+    {
+      "id": 2843,
+      "name": "himore",
+      "status": "open",
+      "expanded": false,
+      "position": 1,
+      "updated": 1491829604469,
+      "created": 1489944676221
+    },
+    {
+      "id": 6035,
+      "name": "testing",
+      "status": "default",
+      "expanded": false,
+      "parent": 2,
+      "position": 0,
+      "updated": 1491962659126,
+      "created": 1489946182669
+    },
+    {
+      "id": 6036,
+      "name": "Autocomplete to pull in reference node - each reference creates a new snapshot - a new version, so really a clone rather than a reference?",
+      "status": "default",
+      "expanded": false,
+      "parent": 1,
+      "position": 1,
+      "created": 1489946182669
+    },
+    {
+      "name": "'children' array rather than 'parent_id'",
+      "id": 6038,
+      "parent": 6036,
+      "created": 1489946182669,
+      "updated": 1489946182669
+    },
+    {
+      "id": 6037,
+      "name": "children indicator",
+      "status": "disabled",
+      "expanded": false,
+      "parent": 1,
+      "updated": 1490131776413,
+      "created": 1489946182669,
+      "position": 3
+    },
+    {
+      "id": 6519,
+      "name": "status filter",
+      "status": "open",
+      "expanded": false,
+      "parent": 1,
+      "position": 4,
+      "updated": 1490293855349,
+      "created": 1490125624804
+    },
+    {
+      "id": 396,
+      "name": "chronological view",
+      "status": "default",
+      "expanded": false,
+      "parent": 1,
+      "position": 5,
+      "created": 1490293549723
+    },
+    {
+      "id": 5259,
+      "name": "easily viewable timestamp",
+      "status": "default",
+      "expanded": false,
+      "parent": 396,
+      "position": 6,
+      "updated": 1490293609125,
+      "created": 1490293561578
+    },
+    {
+      "id": 8349,
+      "name": "yeah?",
+      "status": "open",
+      "expanded": false,
+      "parent": 1476,
+      "position": 0,
+      "updated": 1491962949878,
+      "created": 1490297233278
+    },
+    {
+      "id": 4610,
+      "name": "Action",
+      "status": "open",
+      "expanded": true,
+      "parent": 0,
+      "position": 0,
+      "created": 1490297245937
     }
   ]
 }

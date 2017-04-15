@@ -6,9 +6,9 @@ export const Footer = () => {
 	return (
 		<div className='Footer'>
 			<Button to='/' name='All'/>
-			<Button to='/' name='Open'/>
-			<Button to='/' name='Pending'/>
-			<Button to='/' name='Closed'/>
+			<Button to='/open' name='Open'/>
+			<Button to='/pending' name='Pending'/>
+			<Button to='/closed' name='Closed'/>
 			<p style={{color:'white',fontSize:10}}>
 				Sort by: Created, Edited (each generation)
 			</p>
