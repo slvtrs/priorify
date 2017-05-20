@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Priorify #todo",
       "status": "open",
-      "expanded": true,
+      "expanded": false,
       "parent": 0,
       "position": 1
     },
@@ -44,9 +44,10 @@
       "id": 4417,
       "name": "Entry points",
       "status": "default",
-      "expanded": true,
+      "expanded": false,
       "parent": 0,
-      "position": 3
+      "position": 3,
+      "updated": 1493385935235
     },
     {
       "id": 9391,
@@ -375,10 +376,11 @@
     {
       "id": 8784,
       "name": "Hierarchy",
-      "status": "complete",
+      "status": "open",
       "expanded": false,
       "parent": 0,
-      "position": 8,
+      "position": 4,
+      "updated": 1493385925309,
       "created": 1489630486688
     },
     {
@@ -531,16 +533,6 @@
       "created": 1490293561578
     },
     {
-      "id": 8349,
-      "name": "yeah?",
-      "status": "open",
-      "expanded": false,
-      "parent": 1476,
-      "position": 0,
-      "updated": 1491962949878,
-      "created": 1490297233278
-    },
-    {
       "id": 4610,
       "name": "Action",
       "status": "open",
@@ -548,6 +540,249 @@
       "parent": 0,
       "position": 0,
       "created": 1490297245937
+    },
+    {
+      "id": 1806,
+      "name": "Testing",
+      "status": "open",
+      "expanded": false,
+      "parent": 0,
+      "position": 7,
+      "created": 1492219829456
+    },
+    {
+      "id": 3295,
+      "name": "nice",
+      "status": "open",
+      "expanded": true,
+      "parent": 1806,
+      "position": 0,
+      "created": 1492219837199
+    },
+    {
+      "id": 6447,
+      "name": "Ok so the next important step that I want to implement tonight, as my first real shot at creating a chunkable taste of the true value that I see here, is to be able to take a lengthy paragraph of writing (much like this) and with a simple keyboard shortcut, collapse it all into a single node.",
+      "status": "default",
+      "expanded": false,
+      "parent": 1806,
+      "position": 2,
+      "created": 1492219869190
+    },
+    {
+      "id": 5773,
+      "name": "this can either be done with a string of text selected, which will then be copied and used as the title for the new parent node",
+      "status": "default",
+      "expanded": false,
+      "parent": 6447,
+      "position": 0,
+      "created": 1492219943358
+    },
+    {
+      "id": 2039,
+      "name": "or it can be done with nothing selected, in which case the focus is then brought to the new, empty parent, awaiting input for the new title",
+      "status": "default",
+      "expanded": true,
+      "parent": 6447,
+      "position": 1,
+      "created": 1492219969662
+    },
+    {
+      "id": 689,
+      "name": "this here",
+      "status": "open",
+      "expanded": true,
+      "parent": 1806,
+      "position": 3,
+      "created": 1492223369766
+    },
+    {
+      "id": 4242,
+      "name": "indenting",
+      "status": "open",
+      "expanded": false,
+      "parent": 3295,
+      "position": 0,
+      "created": 1492226041888
+    },
+    {
+      "id": 8620,
+      "name": "this",
+      "status": "open",
+      "expanded": false,
+      "parent": 3295,
+      "position": 1,
+      "created": 1492226975412
+    },
+    {
+      "name": "",
+      "id": 9688,
+      "parent": 9688,
+      "created": 1492226977712,
+      "updated": 1492226977712,
+      "position": 4
+    },
+    {
+      "name": "",
+      "id": 4060,
+      "parent": 4060,
+      "created": 1492226979419,
+      "updated": 1492226979419,
+      "position": 2
+    },
+    {
+      "name": "",
+      "id": 5740,
+      "parent": 5740,
+      "created": 1492262408179,
+      "updated": 1492262408179,
+      "position": 2
+    },
+    {
+      "name": "",
+      "id": 2031,
+      "parent": 2031,
+      "created": 1492263322090,
+      "updated": 1492263322090,
+      "position": 3
+    },
+    {
+      "name": "",
+      "id": 4424,
+      "parent": 4424,
+      "created": 1492263340573,
+      "updated": 1492263340573,
+      "position": 3
+    },
+    {
+      "name": "",
+      "id": 441,
+      "parent": 441,
+      "created": 1492263563033,
+      "updated": 1492263563033,
+      "position": 3
+    },
+    {
+      "name": "",
+      "id": 3232,
+      "parent": 3232,
+      "created": 1492264437519,
+      "updated": 1492264437519,
+      "position": 3
+    },
+    {
+      "id": 7880,
+      "name": "brains gotta poop",
+      "status": "open",
+      "expanded": false,
+      "parent": 3295,
+      "position": 2,
+      "updated": 1492264774181,
+      "created": 1492264766074
+    },
+    {
+      "id": 7631,
+      "name": "Priorify brainstorming",
+      "status": "open",
+      "expanded": false,
+      "parent": 0,
+      "position": 6,
+      "updated": 1493385939674,
+      "created": 1493147941795
+    },
+    {
+      "id": 5157,
+      "name": "Values",
+      "status": "open",
+      "expanded": true,
+      "parent": 7631,
+      "position": 0,
+      "created": 1493147959670
+    },
+    {
+      "id": 8954,
+      "name": "Reference your own advice from past lessons",
+      "status": "open",
+      "expanded": true,
+      "parent": 5157,
+      "position": 0,
+      "created": 1493147972088
+    },
+    {
+      "id": 7018,
+      "name": "When making a big decision, it's valuable to be able to see a summary of the takeaways and lessons from past decisions.",
+      "status": "open",
+      "expanded": false,
+      "parent": 8954,
+      "position": 0,
+      "updated": 1493148049157,
+      "created": 1493148021176
+    },
+    {
+      "id": 1889,
+      "name": "",
+      "status": "complete",
+      "expanded": false,
+      "parent": 8954,
+      "position": 1,
+      "updated": 1493149016212,
+      "created": 1493149015146
+    },
+    {
+      "id": 2522,
+      "name": "Freewriting doesn't care where it lives in the tree",
+      "status": "default",
+      "expanded": true,
+      "parent": 5157,
+      "position": 1,
+      "created": 1493149021872
+    },
+    {
+      "id": 7547,
+      "name": "It's helpful to be able to add children, parents, uncles, etc. but to be able to do this from anywhere would be useful and liberating",
+      "status": "open",
+      "expanded": false,
+      "parent": 2522,
+      "position": 0,
+      "updated": 1493149842971,
+      "created": 1493149066586
+    },
+    {
+      "id": 1253,
+      "name": "<span style=\"font-size: 16px; letter-spacing: 0.8px;\">But without a parent, a node can quickly become forever lost...</span>",
+      "status": "closed",
+      "expanded": true,
+      "parent": 2522,
+      "position": 1,
+      "updated": 1493149887682,
+      "created": 1493149867414
+    },
+    {
+      "id": 5303,
+      "name": "Could a node simply need an ancestor, even if it's not an immediate descendant",
+      "status": "open",
+      "expanded": true,
+      "parent": 1253,
+      "position": 0,
+      "created": 1493149882949
+    },
+    {
+      "id": 7784,
+      "name": "Journal",
+      "status": "default",
+      "expanded": false,
+      "parent": 0,
+      "position": 5,
+      "created": 1493342755760
+    },
+    {
+      "id": 1187,
+      "name": " 4/28/2017, 9:24:35 AM",
+      "status": "default",
+      "expanded": true,
+      "parent": 7784,
+      "position": 0,
+      "updated": 1493385948124,
+      "created": 1493385859586
     }
   ]
 }

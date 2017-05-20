@@ -60,7 +60,7 @@ export class NodeList extends Component {
 	    var node = this.refs['node-'+ (index-1) ];
 	    if (!node)
 	    	this.props.handleFocusParent(evt);
-	    else if(node.state.expanded){
+	    else if(node.state.expanded && Object.keys(node.refs.list.refs).length){
 	    	console.log(node)
 	    	var nephewList = node.refs.list.refs;
 	    	var lastIndex = Object.keys(nephewList).length - 1;
@@ -78,7 +78,7 @@ export class NodeList extends Component {
 		// and letting each component reredner itself with lifecycle funcs
 
 		var node = this.refs['node-'+index];
-		if(node.state.expanded){
+		if(node.state.expanded && Object.keys(node.refs.list.refs).length){
 			node.refs.list.refs['node-0'].refs.input.focus();
 			// use this.handleFocus() instead
 		}
@@ -98,6 +98,12 @@ export class NodeList extends Component {
 			this.handleFocus(evt, index+1);
 	}
 
+	focusPreviousSibling = (evt, index) => {
+		var node = this.refs['node-'+ (index-1) ];
+		if (node)
+			this.handleFocus(evt, index-1);
+	}
+
 	handleEnter = (evt, id, index) => {
 		evt.preventDefault();
 		const newId = generateId();
@@ -112,7 +118,7 @@ export class NodeList extends Component {
 			// saveChildNodes(updatedTodos);
 			createTodo(newNode);
 		}
-		else{
+		else {
 			const newNode = {name:'', id: newId, parent: this.props.id, created: Date.now(), updated: Date.now()};
 			const updatedTodos = addTodo(this.state.nodes, newNode, id, index);
 			this.setState({nodes: updatedTodos});
@@ -131,15 +137,15 @@ export class NodeList extends Component {
 	}
 
 	handleIndent = (evt, id, index, passedNode) => {
-		console.log(passedNode);
+		console.log('indent this node', passedNode);
 		evt.preventDefault();
 		let node = findById(id, this.state.nodes);
 		node.parent = this.state.nodes[index-1].id;
-		console.log(node);
+		console.log('node has new parent', node);
 
 		const updatedList = removeTodo(this.state.nodes, id);
 		this.setState({nodes: updatedList});
-		console.log(node);
+		console.log('finished nodes', this.state.nodes);
 		saveTodo(node);
 
 		// let parent = this.state.nodes.find(parent => parent.id === node.parent);
@@ -171,6 +177,31 @@ export class NodeList extends Component {
 	  evt.preventDefault()
 	  alert('unindent')
 	}
+
+	handleImplode = (evt, id, index, node) => {
+		console.log(index);
+		evt.preventDefault();
+		debugger;
+		
+		// this.handleRemove(evt, id);
+		let updatedTodos = removeTodo(this.state.nodes, id)
+		this.setState({nodes: updatedTodos});
+		console.log(this.state.nodes);
+
+		const newId = generateId();
+		const newNode = {name:'', id: newId, parent: this.props.id, created: Date.now(), updated: Date.now(), position: index};
+		updatedTodos = addTodo(this.state.nodes, newNode, id-1, index-1);
+		this.setState({nodes: updatedTodos});
+		for(let u of updatedTodos)
+			saveTodo(u);
+		createTodo(newNode);
+
+		node.position = 0;
+
+		console.log(this.state.nodes);
+
+		this.handleIndent(evt, id, index + 1, node);
+	}
 	
 	handleNavigation = (evt, id, index, node) => {
 		switch(evt.key) {
@@ -195,7 +226,13 @@ export class NodeList extends Component {
 				if(contents.length === 0) {
 					evt.preventDefault();
 					this.handleRemove(evt, id);
-					this.handleFocus(null, index-1, 999999);
+					if(index===0)
+						this.handleFocus(null, index-1, 999999);
+					else{
+						debugger;
+						this.props.handleFocusParent(evt, 9999999);
+						// this.focusPreviousSibling(evt, index);
+					}
 				}
 			break;
 			case 'Tab':
@@ -231,6 +268,7 @@ export class NodeList extends Component {
 				    	handleFocus={this.handleFocus}
 				    	handleFocusParent={this.props.handleFocusParent}
 				    	handleFocusNextUncle={this.focusNextSibling}
+				    	handleImplode={this.handleImplode}
 				    />
 			    )}
 			</div>

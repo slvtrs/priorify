@@ -43,7 +43,34 @@ export class Node extends Component {
 	handleKeyDown (evt) {
 		var myNavigationKeys = ['.', 'Enter'];
 		var navigationKeys = ['ArrowUp','ArrowDown','Enter','Backspace','Tab'];
-		if (this.context.mods.length) {
+		console.log(this.context.mods);
+		if (this.context.mods.indexOf('Meta') > -1) {
+			if(evt.key === 'd'){
+				evt.preventDefault();
+				this.refs.input.innerHTML += ' ' +  new Date().toLocaleString();
+				this.setState({
+					name: this.refs.input.innerHTML
+				}, function(){
+					this.saveNode(true);
+				});
+			}
+			else if(evt.key === 'ArrowUp'){
+				// jump to first node
+			}
+			else if(evt.key === 'ArrowDown'){
+				// jump to last node
+			}
+			else if (myNavigationKeys.indexOf(evt.key) > -1)
+				this.handleMyNavigation(evt, this.props.id, this.props.position);
+		}
+		else if (this.context.mods.indexOf('Alt') > -1) {
+			// nodeList controls (jump to parent)
+			if(evt.key === 'ArrowUp')
+				console.log('jump to parent node');
+			else if(evt.key === 'ArrowDown')
+				console.log('jump to next uncle');
+		}
+		else if (this.context.mods.length) {
 			if (myNavigationKeys.indexOf(evt.key) > -1)
 				this.handleMyNavigation(evt, this.props.id, this.props.position);
 		}
@@ -58,7 +85,10 @@ export class Node extends Component {
 			  this.toggleExpand(evt);
 			break;
 			case 'Enter':
-				this.cycleStatus(evt);
+				if (this.context.mods.indexOf('Meta') > -1)
+					this.cycleStatus(evt);
+				else if (this.context.mods.indexOf('Shift') > -1)
+					this.implode(evt);
 			break;
 			default:
 			break;
@@ -118,6 +148,12 @@ export class Node extends Component {
   		});
   	}
 
+  	implode = (evt) => {
+  		// evt.preventDefault();
+  		if(!this.state.expanded) this.toggleExpand(evt);
+  		this.props.handleImplode(evt, this.props.id, this.props.position, this);
+  	}
+
   	handleFocus = (evt, caret) => {
   		console.log('node handle focus');
   		evt.preventDefault();
@@ -135,7 +171,7 @@ export class Node extends Component {
   	}
 
   	handleFocusOverflow = (evt) => {
-  		this.props.handleFocusNextUncle(evt, this.props.parentPos);
+  		this.props.handleFocusNextUncle(evt, this.props.position);
   	}
 
   	handleEnterFromBottom = (evt) => {
